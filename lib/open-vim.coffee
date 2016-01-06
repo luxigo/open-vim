@@ -16,7 +16,7 @@ module.exports =
       @open(vimPath) # call explicitly upon activate, since package is lazy loaded and this setup is async
       return
 
-    vimType = if OS.platform() is "darwin" then "mvim" else "gvim"
+    vimType = if OS.platform() is "darwin" then "mvim" else "vi"
     which_vim = if OS.platform() is "win32" then "which #{vimType}" else "where #{vimType}"
     exec which_vim, (error, stdout, stderr) =>
       if error
